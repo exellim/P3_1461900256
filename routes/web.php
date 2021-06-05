@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControllerDokter;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('pasien0256',ControllerDokter::class);
+Route::resource('/pasien0256', 'App\Http\Controllers\ControllerDokter');
+Route::post('/pasien0256/update','ControllerDokter@update');
+Route::resource('/pasien0256', ControllerDokter::class);
+
+//Route::get('/pasien', 'App\Http\Controllers\ControllerDokter@index');
