@@ -98,7 +98,9 @@ class ControllerDokter extends Controller
      */
     public function destroy($id)
     {
-        DB::table('pasien')->where('id',$id)->delete();
-        return redirect('/pasien0256');
+        $pasien = pasien::find($id);
+        $pasien->delete();
+
+        return redirect('pasien0256');
     }
 }

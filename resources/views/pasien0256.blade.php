@@ -49,7 +49,11 @@
             <td>{{$pasien->alamat}}</td>
             <td><a href="{{ url('pasien0256/'.$pasien->id. '/edit') }}">Edit</a>
             |
-            <a href="/pasien/destroy/{{ $pasien->id }}">Hapus</a>
+            <form action="{{ url('pasien0256/'. $pasien->id) }}" method="post">
+            @csrf
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit">Delete</button>
+            </form>
             </td>
         </tr>
         @endforeach

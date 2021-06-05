@@ -1,4 +1,4 @@
-<form action="{{ url('pasien0256/'.$pasien->id) }}" method="patch">
+<form action="{{ url('pasien0256/'.$pasien->id) }}" method="put">
     @csrf
     <input type="hidden" name="method" value="patch">
     id <input type="text" name="id" value="{{ $pasien->id }}">
